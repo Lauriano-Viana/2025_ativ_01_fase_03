@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "author": "lauriano costa",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -153.3, "left": 157.8, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 169.4,
+      "left": 220.8,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -128.4,
+      "left": 339.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -128.4,
+      "left": 378.2,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -128.4,
+      "left": 301.4,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v28.8", "h-163.2" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "dht1:SDA", "esp:4", "green", [ "v0" ] ],
+    [ "esp:GND.3", "btn1:1.l", "black", [ "h0" ] ],
+    [ "esp:2", "btn1:2.l", "gold", [ "h43.24", "v38.4" ] ],
+    [ "esp:18", "led1:A", "green", [ "h177.64", "v0", "h86.4" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led2:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "esp:5", "led2:A", "blue", [ "h0" ] ],
+    [ "esp:19", "led3:A", "red", [ "h0" ] ],
+    [ "led3:C", "esp:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

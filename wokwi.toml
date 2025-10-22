@@ -1,0 +1,5 @@
+[wokwi]
+chip = "esp32"
+firmware = "/home/lauriano/Documentos/FIAP/MACHINE-LEARNING/2025/FASE-03/ATIVIDADE/ativ-f-03/.pio/build/esp32dev/firmware.bin"
+partition_table = "default_4MB.csv"
+[env]
